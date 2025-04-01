@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مساعدة أطفال أفريقيا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #FF4500, #FF6347, #FF7F50);
+            color: white;
+            text-align: center;
+            height: 100%;
+            overflow-y: scroll;
+            padding-bottom: 100px;
+        }
+        h1, h2 {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #FFEB3B;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #FFEB3B;
+            font-size: 35px;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        p {
+            color: #E0E0E0;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .donate-button {
+            background: #FF4500;
+            color: white;
+            padding: 20px 40px;
+            font-size: 26px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: 0.3s;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        .donate-button:hover {
+            background: #FF6347;
+            transform: scale(1.05);
+        }
+
+        .crypto-payment {
+            margin-top: 30px;
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .crypto-payment p {
+            font-size: 22px;
+            font-weight: bold;
+            color: #FFEB3B;
+        }
+
+        .crypto-payment input {
+            width: 100%;
+            padding: 12px;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 5px;
+            background: #333;
+            color: white;
+            border: 1px solid #FF4500;
+            margin-top: 20px;
+        }
+
+        .crypto-payment img {
+            width: 100px;
+            margin-top: 15px;
+        }
+
+        .image-gallery {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .urgent {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .strong-cta {
+            color: #FFEB3B;
+            font-size: 35px;
+            font-weight: bold;
+            margin-top: 50px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: #E0E0E0;
+        }
+
+        .long-section {
+            padding: 60px 40px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .long-section h2 {
+            font-size: 30px;
+            color: #FFEB3B;
+        }
+
+        .long-section p {
+            font-size: 20px;
+            color: #E0E0E0;
+            line-height: 1.8;
+        }
+
+        .long-section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Scrollable Text Section */
+        .scroll-section {
+            max-height: 600px;
+            overflow-y: scroll;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        .scroll-section p {
+            font-size: 18px;
+            color: #E0E0E0;
+            line-height: 1.8;
+        }
+
+        .scroll-section h2 {
+            color: #FFEB3B;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        /* More detailed content */
+        .detailed-content {
+            margin-top: 40px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .detailed-content p {
+            font-size: 20px;
+            color: #E0E0E0;
+            line-height: 1.8;
+        }
+    </style>
+    <script>
+        function showCryptoPayment() {
+            document.getElementById('crypto-payment').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ادعم أطفال أفريقيا الآن!</h1>
+        <p>كل يوم، يواجه ملايين الأطفال في أفريقيا الجوع، المرض، وفقر لا يمكن تصوره. حياتهم مهددة. إذا لم نتدخل الآن، فقد يفقدون الفرصة للبقاء على قيد الحياة.</p>
+        <h2>لماذا تبرعك مهم؟</h2>
+        <p>تبرعك اليوم سيؤثر مباشرة على حياة الأطفال في أفريقيا. من خلال تبرعك، يمكنك توفير الطعام، الرعاية الطبية، والتعليم لأطفال في حاجة ماسة. كل دولار يُحدث فرقًا كبيرًا!</p>
+        <div class="image-gallery">
+            <img src="https://th.bing.com/th/id/OIP.jF0V0nHUfPn4QqzUco-HHAHaEe?rs=1&pid=ImgDetMain" alt="African Child 1">
+            <img src="https://th.bing.com/th/id/OIP.jw8pcE3JvbcoyKl5NLTL9wHaE7?w=850&h=566&rs=1&pid=ImgDetMain" alt="African Child 2">
+            <img src="https://familiasenruta.com/wp-content/uploads/2014/04/Foto-Cristina1.jpg" alt="African Child 3">
+        </div>
+        <h2>كيف يمكنك المساعدة؟</h2>
+        <p>تبرعك سيضمن للأطفال في أفريقيا ما يحتاجونه للبقاء على قيد الحياة! الأمل في تغيير حياتهم يبدأ بك.</p>
+        <div class="urgent">هذه حياتهم بين يديك! تبرع الآن وكن الأمل!</div>
+        <div class="strong-cta">تبرع الآن!</div>
+        <div class="scroll-section">
+            <h2>تأثير التبرع</h2>
+            <p>العديد من الأطفال يعانون من نقص حاد في الطعام والرعاية الصحية. مرضى الملاريا، نقص الماء الصالح للشرب، وعدم وجود مدارس قربهم. هذه المشاكل تجعل حياتهم أكثر صعوبة. تبرعك يمكن أن يغير ذلك.</p>
+            <p>تبرعك يعني أنه يمكنك إطعام طفل، علاج مرضه، وتعليمه ليصبح جزءًا من الجيل الذي سيغير قارة أفريقيا. هذا ليس مجرد تبرع مالي. إنه استثمار في حياة طفل، وفي مستقبل إفريقيا ككل.</p>
+        </div>
+        <div class="detailed-content">
+            <h2>الأطفال في أفريقيا اليوم</h2>
+            <p>في أفريقيا، هناك أكثر من 60 مليون طفل في حاجة إلى دعم عاجل. مليون طفل يموتون كل عام بسبب الجوع. الأمراض المنقولة عبر المياه تفتك بحياة العديد منهم. التعليم محدود جدًا. لكن هناك أمل. بفضل تبرعاتكم، يمكننا تحسين هذه الحياة، وتقديم الرعاية الطبية والتعليم لأولئك الذين هم في أمس الحاجة.</p>
+            <img src="https://th.bing.com/th/id/OIP.jF0V0nHUfPn4QqzUco-HHAHaEe?rs=1&pid=ImgDetMain" alt="African Child 4">
+        </div>
+        <button class="donate-button" onclick="showCryptoPayment()">تبرع الآن</button>
+        <div id="crypto-payment" class="crypto-payment">
+            <p>أرسل تبرعك إلى عنوان البيتكوين التالي:</p>
+            <input type="text" value="bc1qx8ecy5dgrlyd0u846k6gax7uekg4k74338te6h" readonly>
+            <br>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png" alt="Bitcoin">
+        </div>
+    </div>
+    <div class="footer">
+        <p>نشكرك على دعمك. كل تبرع يحسن حياة طفل في أفريقيا!</p>
+    </div>
+</body>
+</html>
